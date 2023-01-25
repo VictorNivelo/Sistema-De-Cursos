@@ -11,10 +11,14 @@ import controlador.listas.ListaEnlazada;
  * @author SONY VAIO
  */
 public class Cursa {
+    
     private Matricula matricula;
     private Asignatura asignatura;
+    
     private Integer horasAsistidas;
+    
     private Nota notaFinal;
+    
     private Integer porcentajeHorasAsistidas;
 
     public Matricula getMatricula() {
@@ -56,13 +60,5 @@ public class Cursa {
     public void setPorcentajeHorasAsistidas(Integer porcentajeHorasAsistidas) {
         this.porcentajeHorasAsistidas = porcentajeHorasAsistidas;
     }
-    
-    
-    @Override
-    public String toString() {
-        return "Asignatura: "+asignatura+" - HorasAsistidas: " +horasAsistidas+ " - Matricula: " + matricula;
-    }
-    
-    
     
 }

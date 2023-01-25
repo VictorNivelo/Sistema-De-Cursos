@@ -11,27 +11,17 @@ import controlador.listas.ListaEnlazada;
  * @author SONY VAIO
  */
 public class Malla {
-    private Integer id;
-    private ListaEnlazada<Carrera> carreras;
-    private String regimen;
     
-    public Malla(){
+    private Integer idMalla;
+    private String regimen;
+    private Carrera carrera;
+
+    public Integer getIdMalla() {
+        return idMalla;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public ListaEnlazada<Carrera> getCarreras() {
-        return carreras;
-    }
-
-    public void setCarreras(ListaEnlazada<Carrera> carreras) {
-        this.carreras = carreras;
+    public void setIdMalla(Integer idMalla) {
+        this.idMalla = idMalla;
     }
 
     public String getRegimen() {
@@ -41,7 +31,13 @@ public class Malla {
     public void setRegimen(String regimen) {
         this.regimen = regimen;
     }
-    
-    
+
+    public Carrera getCarrera() {
+        return carrera;
+    }
+
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
+    }
     
 }

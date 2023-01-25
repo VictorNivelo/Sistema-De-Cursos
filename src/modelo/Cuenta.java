@@ -10,11 +10,14 @@ package modelo;
  * @author David Campoverde
  */
 public class Cuenta {
+    
     private Integer id;
+    private Persona persona;
+    
     private String usuario;
     private String contrasenia;
+    
     private Boolean estado;
-    private Persona persona;
     
     public Integer getId() {
         return id;

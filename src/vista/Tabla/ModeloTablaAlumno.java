@@ -80,11 +80,11 @@ public class ModeloTablaAlumno extends AbstractTableModel {
             case 4:
                 return (a != null) ? a.getDireccion() : "NO DEFINIDO";
             case 5:
-                return (a != null) ? a.getCorreo() : "NO DEFINIDO";
+                return (a != null) ? a.getCarrera() : "NO DEFINIDO";
             case 6:
-                return (a != null) ? a.getMatriculas() : "NO DEFINIDO";
+                return (a != null) ? a.getFechaNacimiento() : "NO DEFINIDO";
             case 7: 
-                return (a != null) ? a.getAsistencia() : "NO DEFINIDO";
+                return (a != null) ? a.getGenero() : "NO DEFINIDO";
             
             default:
             

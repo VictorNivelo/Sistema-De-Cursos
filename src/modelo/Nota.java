@@ -10,6 +10,7 @@ package modelo;
  * @author David Campoverde
  */
 public class Nota {
+    
     private Float aprendizajeA;
     private Float trabajoE;
     private Float acompanamientoD;

@@ -6,6 +6,7 @@ package controlador.listas;
 
 import controlador.listas.excepciones.ListaNullException;
 import controlador.listas.excepciones.PosicionNoEncontradaException;
+import java.lang.reflect.Array;
 import modelo.Persona;
 
 /**
@@ -144,6 +145,19 @@ public class ListaEnlazada<E> {
 
     public void setSize(Integer size) {
         this.size = size;
+    }
+    
+    public E[] ComvertirEnArray() {
+        E[] matriz = null;
+        if (this.size > 0) {
+            matriz = (E[]) Array.newInstance(cabecera.getDato().getClass(), this.size);
+            NodoLista<E> aux = cabecera;
+            for (int i = 0; i < this.size; i++) {
+                matriz[i] = aux.getDato();
+                aux = aux.getSiguiente();
+            }
+        }
+        return matriz;
     }
 
 }

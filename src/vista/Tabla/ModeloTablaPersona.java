@@ -76,7 +76,7 @@ public class ModeloTablaPersona extends AbstractTableModel {
             case 4:
                 return (p != null) ? p.getDireccion() : "NO DEFINIDO";
             case 5:
-                return (p != null) ? p.getCorreo() : "NO DEFINIDO";
+                return (p != null) ? p.getCiudad() : "NO DEFINIDO";
             default:
             
                 return null;

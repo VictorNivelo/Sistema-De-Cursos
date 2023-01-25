@@ -12,31 +12,39 @@ import modelo.enums.Estado;
  * @author SONY VAIO
  */
 public class Asignatura {
-    private Integer id;
-    private String nombre;
+    
+    private Integer idAsignatura;
+    
+    private String nombreAsignatura;
     private Character paralelo;
-    private String unidad;
+    
+    private Integer unidad;
+    
+    private Alumno alumno;
     private Docente docente;
+    
     private Cursa cursa;
-    private Estado estadoAsignatura;
-    private Integer numeroHoras;
+    private Integer NumeroHoras;
+    private Integer HorasAsistidas;
     
-    public Integer getId() {
-        return id;
+    private boolean estadoAsignatura;
+
+    public Integer getIdAsignatura() {
+        return idAsignatura;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdAsignatura(Integer idAsignatura) {
+        this.idAsignatura = idAsignatura;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreAsignatura() {
+        return nombreAsignatura;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreAsignatura(String nombreAsignatura) {
+        this.nombreAsignatura = nombreAsignatura;
     }
-    
+
     public Character getParalelo() {
         return paralelo;
     }
@@ -45,12 +53,20 @@ public class Asignatura {
         this.paralelo = paralelo;
     }
 
-    public String getUnidad() {
+    public Integer getUnidad() {
         return unidad;
     }
 
-    public void setUnidad(String unidad) {
+    public void setUnidad(Integer unidad) {
         this.unidad = unidad;
+    }
+
+    public Alumno getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
 
     public Docente getDocente() {
@@ -60,7 +76,7 @@ public class Asignatura {
     public void setDocente(Docente docente) {
         this.docente = docente;
     }
-    
+
     public Cursa getCursa() {
         return cursa;
     }
@@ -69,28 +85,29 @@ public class Asignatura {
         this.cursa = cursa;
     }
 
-    public Estado getEstadoAsignatura() {
+    public Integer getNumeroHoras() {
+        return NumeroHoras;
+    }
+
+    public void setNumeroHoras(Integer NumeroHoras) {
+        this.NumeroHoras = NumeroHoras;
+    }
+
+    public Integer getHorasAsistidas() {
+        return HorasAsistidas;
+    }
+
+    public void setHorasAsistidas(Integer HorasAsistidas) {
+        this.HorasAsistidas = HorasAsistidas;
+    }
+
+    public boolean isEstadoAsignatura() {
         return estadoAsignatura;
     }
 
-    public void setEstadoAsignatura(Estado estadoAsignatura) {
+    public void setEstadoAsignatura(boolean estadoAsignatura) {
         this.estadoAsignatura = estadoAsignatura;
     }
-
-    public Integer getNumeroHoras() {
-        return numeroHoras;
-    }
-
-    public void setNumeroHoras(Integer numeroHoras) {
-        this.numeroHoras = numeroHoras;
-    }
-
-    @Override
-    public String toString() {
-        return id.toString();
-    }
-    
-    
     
     
 }

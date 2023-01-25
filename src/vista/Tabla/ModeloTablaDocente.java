@@ -80,13 +80,13 @@ public class ModeloTablaDocente extends AbstractTableModel {
             case 4:
                 return (d != null) ? d.getDireccion() : "NO DEFINIDO";
             case 5:
-                return (d != null) ? d.getCorreo() : "NO DEFINIDO";
+                return (d != null) ? d.getAniosExpDocente() : "NO DEFINIDO";
             case 6:
                 return (d != null) ? d.getDireccion(): "NO DEFINIDO";
             case 7: 
                 return (d != null) ? d.getFechaNacimiento(): "NO DEFINIDO";
             case 8:
-                return (d != null) ? d.getTituloCuartoNivel(): "NO DEFINIDO";
+                return (d != null) ? d.getAniosExpDocente(): "NO DEFINIDO";
             
             default:
             

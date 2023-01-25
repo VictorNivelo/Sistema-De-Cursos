@@ -32,7 +32,7 @@ public class RolDao extends AdaptadorDao<Rol> {
     }
 
     public boolean guardar() throws Exception {
-        this.rol.setId(generarId());
+        this.rol.setIdRol(generarId());
         guardar(this.rol);
         return true;
     }
@@ -51,17 +51,17 @@ public class RolDao extends AdaptadorDao<Rol> {
 
             try {
                 
-                this.getRol().setNombre("Administrador");
+//                this.getRol().setNombre("Administrador");
                 this.getRol().setDescripcion("El que tiene permisos sobre el sistema");
                 this.setRol(rol);
                 this.guardar();
                 this.setRol(null);
-                this.getRol().setNombre("Docente");
+//                this.getRol().setNombre("Docente");
                 this.getRol().setDescripcion("El que lleva a cabo el control de las notas del estudiante");
                 this.setRol(rol);
                 this.guardar();
                 this.setRol(null);
-                this.getRol().setNombre("Alumno");
+//                this.getRol().setNombre("Alumno");
                 this.getRol().setDescripcion("El que se matricula en las asignaturas");
                 this.setRol(rol);
                 this.guardar();

@@ -55,11 +55,11 @@ public class CuentaDao extends AdaptadorDao<Cuenta> {
                 PersonaDao pd = new PersonaDao();
                 pd.getPersona().setApellidos("Administrador");
                 pd.getPersona().setNombres("Administrador");
-                pd.getPersona().setCorreo("admin@unl.edu.ec.com");
+//                pd.getPersona().se("admin@unl.edu.ec.com");
                 pd.getPersona().setIdentificacion("1104311811");
                 pd.getPersona().setTipoIdentificacion(TipoIdentificacion.CEDULA);
                 pd.guardar();
-                this.getCuenta().setUsuario(pd.getPersona().getCorreo());
+//                this.getCuenta().setUsuario(pd.getPersona().getCorreo());
                 this.getCuenta().setEstado(Boolean.TRUE);
                 this.getCuenta().setContrasenia("admin1234");
                 this.guardar();
@@ -67,7 +67,7 @@ public class CuentaDao extends AdaptadorDao<Cuenta> {
                 this.setCuenta(null);
                 pd.getPersona().setApellidos("Cueva");
                 pd.getPersona().setNombres("Carlos");
-                pd.getPersona().setCorreo("carlos@unl.edu.ec.com");
+//                pd.getPersona().setCorreo("carlos@unl.edu.ec.com");
                 pd.getPersona().setIdentificacion("1129580997");
                 pd.getPersona().setDireccion("Jipiro");
                 pd.getPersona().setTipoIdentificacion(TipoIdentificacion.CEDULA);

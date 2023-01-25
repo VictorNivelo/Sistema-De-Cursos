@@ -35,7 +35,6 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,7 +64,7 @@
                       <Component id="btnRegresar" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblAdministradorAsistencias" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblAdministradorCuentas" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblAdministradorAdministradores" alignment="0" pref="303" max="32767" attributes="0"/>
+                      <Component id="lblAdministradorAdministradores" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -79,16 +78,16 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblAdministradorCuentas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblAdministradorAsistencias" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAdministradorCarreras" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="lblAdministradorAsignaturas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblAdministradorDocentes" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="lblAdministradorAlumnos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblAdministradorAsignaturas" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="lblAdministradorCarreras" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAdministradorAsistencias" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>

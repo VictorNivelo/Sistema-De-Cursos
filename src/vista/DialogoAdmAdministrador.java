@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
-import controlador.dao.PersonaDao;
-import vista.Tabla.ModeloTablaAdministrador;
+import controlador.listas.ListaEnlazada;
+import javax.swing.table.DefaultTableModel;
+import modelo.Administrador;
 
 /**
  *
@@ -14,14 +11,12 @@ import vista.Tabla.ModeloTablaAdministrador;
  */
 public class DialogoAdmAdministrador extends javax.swing.JDialog {
     
-    private PersonaDao personaDao = new PersonaDao();
-    private ModeloTablaAdministrador mtadm = new ModeloTablaAdministrador();
-
+    ListaEnlazada<Administrador> listaAdministradores = new ListaEnlazada<>();
+    
     /**
      * Creates new form DialogoAdministrador
      */
     public DialogoAdmAdministrador() {
-//        super(parent, modal);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -37,36 +32,32 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        btnAgregarAdministrador = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btnRegresar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblListaAdministradores = new javax.swing.JTable();
+        btnEliminarAdministrador = new javax.swing.JButton();
+        btnAgregarAdministrador = new javax.swing.JButton();
+        btnMostrarAdministradores = new javax.swing.JButton();
+        btnEditarAdministrador = new javax.swing.JButton();
+        btnGuardarCambios = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel4.setText("Apellido");
-
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
-        jButton5.setText("GUARDAR CAMBIOS");
 
         jLabel7.setText("Usuario");
 
@@ -80,20 +71,7 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
         jLabel5.setText("Edad");
 
-        jButton4.setText("EDITAR ADMINISTRADOR");
-
         jLabel3.setText("Nombre:");
-
-        jButton3.setText("ELIMINAR ADMINISTRADOR");
-
-        btnAgregarAdministrador.setText("AGREGAR ADMINISTRADOR");
-        btnAgregarAdministrador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarAdministradorActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("MOSTRAR LOS ADMINISTRADORES");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -103,6 +81,8 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMINISTRADORES");
 
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -111,7 +91,9 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
+
+        tblListaAdministradores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -119,7 +101,42 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblListaAdministradores);
+
+        btnEliminarAdministrador.setText("ELIMINAR ADMINISTRADOR");
+        btnEliminarAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarAdministradorActionPerformed(evt);
+            }
+        });
+
+        btnAgregarAdministrador.setText("AGREGAR ADMINISTRADOR");
+        btnAgregarAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarAdministradorActionPerformed(evt);
+            }
+        });
+
+        btnMostrarAdministradores.setText("MOSTRAR LOS ADMINISTRADORES");
+        btnMostrarAdministradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarAdministradoresActionPerformed(evt);
+            }
+        });
+
+        btnEditarAdministrador.setText("EDITAR ADMINISTRADOR");
+        btnEditarAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAdministradorActionPerformed(evt);
+            }
+        });
+
+        btnGuardarCambios.setText("GUARDAR CAMBIOS");
+        btnGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCambiosActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setText("REGRESAR");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +144,6 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
                 btnRegresarActionPerformed(evt);
             }
         });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -138,13 +153,13 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnMostrarAdministradores)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)
+                        .addComponent(btnEditarAdministrador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAgregarAdministrador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(btnEliminarAdministrador)
                         .addContainerGap(7, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -176,7 +191,7 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnRegresar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5)
+                        .addComponent(btnGuardarCambios)
                         .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
@@ -214,17 +229,17 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(btnEliminarAdministrador)
                     .addComponent(btnAgregarAdministrador)
-                    .addComponent(jButton4)
-                    .addComponent(jButton1))
+                    .addComponent(btnEditarAdministrador)
+                    .addComponent(btnMostrarAdministradores))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegresar)
-                    .addComponent(jButton5))
+                    .addComponent(btnGuardarCambios))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -257,6 +272,39 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
         abrir.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAgregarAdministradorActionPerformed
+
+    private void btnMostrarAdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAdministradoresActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("1");
+        modelo.addColumn("2");
+        modelo.addColumn("3");
+        
+        Administrador administradorA = new Administrador(1, "asdas", null);
+        
+        listaAdministradores.insertar(administradorA);
+        
+        for (Administrador administrador : listaAdministradores.ComvertirEnArray()) {
+            Object[] fila = { administrador.getIdAdministrador(),administrador.getCargo()};
+            modelo.addRow(fila);
+            tblListaAdministradores.setModel(modelo);
+        }
+    }//GEN-LAST:event_btnMostrarAdministradoresActionPerformed
+
+    private void btnEditarAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAdministradorActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnEditarAdministradorActionPerformed
+
+    private void btnEliminarAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAdministradorActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnEliminarAdministradorActionPerformed
+
+    private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnGuardarCambiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,11 +344,11 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarAdministrador;
+    private javax.swing.JButton btnEditarAdministrador;
+    private javax.swing.JButton btnEliminarAdministrador;
+    private javax.swing.JButton btnGuardarCambios;
+    private javax.swing.JButton btnMostrarAdministradores;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -313,11 +361,11 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tblListaAdministradores;
     // End of variables declaration//GEN-END:variables
 }

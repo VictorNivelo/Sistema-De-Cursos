@@ -14,35 +14,25 @@ package modelo;
 //@XmlRootElement
 public class Rol {
     
-    private Integer id;
-    private String nombre;
+    private Integer idRol;
+    
+    private String Funcion;
     private String descripcion;
 
-    public Rol() {
+    public Integer getIdRol() {
+        return idRol;
     }
 
-    public Rol(Integer id, String nombre, String descripcion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+    public void setIdRol(Integer idRol) {
+        this.idRol = idRol;
     }
 
-    
-    
-    public Integer getId() {
-        return id;
+    public String getFuncion() {
+        return Funcion;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setFuncion(String Funcion) {
+        this.Funcion = Funcion;
     }
 
     public String getDescripcion() {
@@ -52,6 +42,5 @@ public class Rol {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
     
 }

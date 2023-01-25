@@ -5,7 +5,6 @@
  */
 package controlador.dao;
 
-import controlador.listas.excepciones.PosicionNoEncontradaException;
 import modelo.Asignatura;
 
 /**
@@ -32,7 +31,7 @@ public class AsignaturaDao extends AdaptadorDao<Asignatura> {
     }
 
     public boolean guardar() throws Exception {
-        this.asignatura.setId(generarId());
+        this.asignatura.setIdAsignatura(generarId());
         guardar(this.asignatura);
         return true;
     }

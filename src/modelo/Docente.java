@@ -11,13 +11,13 @@ import controlador.listas.ListaEnlazada;
  * @author SONY VAIO
  */
 public class Docente extends Persona {
+    
     private Integer idDocente;
-    private String tituloTercerNivel;
-    private String tituloCuartoNivel;
+    private Persona persona;
+    
+    private String NivelEducacion;
     private Integer aniosExpDocente;
     private Integer aniosExpLaboral;
-    
-    private ListaEnlazada<Asignatura> asignaturas;
 
     public Integer getIdDocente() {
         return idDocente;
@@ -27,22 +27,21 @@ public class Docente extends Persona {
         this.idDocente = idDocente;
     }
 
-    public String getTituloTercerNivel() {
-        return tituloTercerNivel;
+    public Persona getPersona() {
+        return persona;
     }
 
-    public void setTituloTercerNivel(String tituloTercerNivel) {
-        this.tituloTercerNivel = tituloTercerNivel;
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
-    public String getTituloCuartoNivel() {
-        return tituloCuartoNivel;
+    public String getNivelEducacion() {
+        return NivelEducacion;
     }
 
-    public void setTituloCuartoNivel(String tituloCuartoNivel) {
-        this.tituloCuartoNivel = tituloCuartoNivel;
+    public void setNivelEducacion(String NivelEducacion) {
+        this.NivelEducacion = NivelEducacion;
     }
-
 
     public Integer getAniosExpDocente() {
         return aniosExpDocente;
@@ -59,6 +58,5 @@ public class Docente extends Persona {
     public void setAniosExpLaboral(Integer aniosExpLaboral) {
         this.aniosExpLaboral = aniosExpLaboral;
     }
-    
     
 }

@@ -11,19 +11,23 @@ import modelo.enums.TipoIdentificacion;
  *
  * @author SONY VAIO
  */
-public abstract class Persona {
+public class Persona {
     private Integer id;
+    
     private String nombres;
     private String apellidos;
-    private String identificacion;
-    private TipoIdentificacion tipoIdentificacion;
-    private String direccion;
-    private String telefono;
-    private String ciudad;
-    private String fechaNacimiento;
     private Generos genero;
+    private String fechaNacimiento;
+    
+    private TipoIdentificacion tipoIdentificacion;
+    private String identificacion;
+    
+    private String direccion;
+    private String ciudad;
+    
+    private String telefono;
+    
     private Cuenta cuenta;
-    private String correo;
 
     public Persona(){
         
@@ -119,13 +123,6 @@ public abstract class Persona {
         this.cuenta = cuenta;
     }
 
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
     
     
     

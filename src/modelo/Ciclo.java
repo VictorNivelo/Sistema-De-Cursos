@@ -11,36 +11,34 @@ import controlador.listas.ListaEnlazada;
  * @author SONY VAIO
  */
 class Ciclo {
-    private Integer id;
-    private String nombre;
-    private ListaEnlazada<Asignatura> asignaturas;
-
-    public Ciclo(){
-        
-    }
     
-    public Integer getId() {
-        return id;
+    private Integer idCiclo;
+    
+    private Integer CantidadCiclos;
+    private Carrera carrera;
+
+    public Integer getIdCiclo() {
+        return idCiclo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCiclo(Integer idCiclo) {
+        this.idCiclo = idCiclo;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Integer getCantidadCiclos() {
+        return CantidadCiclos;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCantidadCiclos(Integer CantidadCiclos) {
+        this.CantidadCiclos = CantidadCiclos;
     }
 
-    public ListaEnlazada<Asignatura> getAsignaturas() {
-        return asignaturas;
+    public Carrera getCarrera() {
+        return carrera;
     }
 
-    public void setAsignaturas(ListaEnlazada<Asignatura> asignaturas) {
-        this.asignaturas = asignaturas;
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
     }
     
     

@@ -64,9 +64,9 @@ public class ModeloTablaAsignatura extends AbstractTableModel {
             case 0:
                 return (rowIndex + 1);
             case 1:
-                return (asg != null) ? asg.getEstadoAsignatura().toString() : "NO DEFINIDO";
+                return (asg != null) ? asg.getAlumno().toString() : "NO DEFINIDO";
             case 2:
-                return (asg != null) ? (asg.getCursa()+ " " + asg.getNombre()) : "NO DEFINIDO";
+                return (asg != null) ? (asg.getCursa()+ " " + asg.getNombreAsignatura()) : "NO DEFINIDO";
             case 3:
                 return (asg != null) ? asg.getDocente(): "NO DEFINIDO";
             case 4:

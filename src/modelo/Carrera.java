@@ -12,46 +12,42 @@ import modelo.enums.Seccion;
  * @author SONY VAIO
  */
 public class Carrera {
-    private Integer id;
-    private String nombre;
-    private Seccion seccion;
-    private ListaEnlazada<Ciclo> ciclos;    
-
-    public Carrera(){
-        
-    }
     
-    public Integer getId() {
-        return id;
+    private Integer idCarrera;
+    private String nombreCarrera;
+    private String seccion;
+    private Asignatura asignatura;
+
+    public Integer getIdCarrera() {
+        return idCarrera;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdCarrera(Integer idCarrera) {
+        this.idCarrera = idCarrera;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreCarrera() {
+        return nombreCarrera;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreCarrera(String nombreCarrera) {
+        this.nombreCarrera = nombreCarrera;
     }
 
-    public Seccion getSeccion() {
+    public String getSeccion() {
         return seccion;
     }
 
-    public void setSeccion(Seccion seccion) {
+    public void setSeccion(String seccion) {
         this.seccion = seccion;
     }
 
-    public ListaEnlazada<Ciclo> getCiclos() {
-        return ciclos;
+    public Asignatura getAsignatura() {
+        return asignatura;
     }
 
-    public void setCiclos(ListaEnlazada<Ciclo> ciclos) {
-        this.ciclos = ciclos;
+    public void setAsignatura(Asignatura asignatura) {
+        this.asignatura = asignatura;
     }
-    
-    
+
 }

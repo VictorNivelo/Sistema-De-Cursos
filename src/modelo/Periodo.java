@@ -11,9 +11,12 @@ import modelo.enums.Meses;
  * @author SONY VAIO
  */
 public class Periodo {
+    
     private Integer idPeriodo;
+    
     private Meses mesInicio;
     private Meses mesFin;
+    
     private String especificacion;
 
     public Periodo(){

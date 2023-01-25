@@ -12,10 +12,11 @@ import modelo.Cursa;
  *
  * @author David Campoverde
  */
-public class CursaController {
+public class ControladorCursos {
+    
     private ListaEnlazada<Cursa> cursa;
     
-    public CursaController(){
+    public ControladorCursos(){
         cursa = new ListaEnlazada<>();
     }
     
@@ -24,7 +25,9 @@ public class CursaController {
             try {
                 Cursa cursaAux = cursa.obtener(i);
                 cursaAux.setPorcentajeHorasAsistidas((cursaAux.getHorasAsistidas() * 100) / cursaAux.getAsignatura().getNumeroHoras());
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
+                
             }
         }
 //        cursa.setPorcentajeHorasAsistidas((cursa.getHorasAsistidas() * 100) / cursa.getAsignatura().getNumeroHoras());
@@ -37,8 +40,5 @@ public class CursaController {
     public void setCursa(ListaEnlazada<Cursa> cursa) {
         this.cursa = cursa;
     }
-    
-    
-    
     
 }

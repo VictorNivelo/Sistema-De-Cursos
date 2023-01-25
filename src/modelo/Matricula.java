@@ -4,7 +4,6 @@
  */
 package modelo;
 
-import controlador.listas.ListaEnlazada;
 import java.util.Date;
 
 /**
@@ -12,17 +11,15 @@ import java.util.Date;
  * @author SONY VAIO
  */
 public class Matricula {
+    
     private Integer idMatricula;
+    
     private Date fechaEmision;
     private Periodo periodo;
-    private Alumno alumno;
     
-    private ListaEnlazada<Cursa> cursa;
+    private Curso curso;
+    private Alumno alumno;
     private Float promedioGeneral;
-
-    public Matricula(){
-        cursa = new ListaEnlazada<>();
-    }
 
     public Integer getIdMatricula() {
         return idMatricula;
@@ -48,20 +45,20 @@ public class Matricula {
         this.periodo = periodo;
     }
 
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
     public Alumno getAlumno() {
         return alumno;
     }
 
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
-    }
-
-    public ListaEnlazada<Cursa> getCursa() {
-        return cursa;
-    }
-
-    public void setCursa(ListaEnlazada<Cursa> cursa) {
-        this.cursa = cursa;
     }
 
     public Float getPromedioGeneral() {
@@ -71,13 +68,5 @@ public class Matricula {
     public void setPromedioGeneral(Float promedioGeneral) {
         this.promedioGeneral = promedioGeneral;
     }
-
-    @Override
-    public String toString() {
-        return idMatricula.toString();
-    }
-    
-    
-    
     
 }

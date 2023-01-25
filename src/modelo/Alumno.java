@@ -11,14 +11,11 @@ import controlador.listas.ListaEnlazada;
  * @author SONY VAIO
  */
 public class Alumno extends Persona {
-    private Integer idAlumno;
-    private Integer numMaterias;
-    private String asistencia;
-    private ListaEnlazada<Matricula> matriculas;
-    public Alumno(){
-        
-    }
     
+    private Integer idAlumno;
+    
+    private Carrera carrera;
+
     public Integer getIdAlumno() {
         return idAlumno;
     }
@@ -27,31 +24,12 @@ public class Alumno extends Persona {
         this.idAlumno = idAlumno;
     }
 
-    public ListaEnlazada<Matricula> getMatriculas() {
-        return matriculas;
+    public Carrera getCarrera() {
+        return carrera;
     }
 
-    public void setMatriculas(ListaEnlazada<Matricula> matriculas) {
-        this.matriculas = matriculas;
+    public void setCarrera(Carrera carrera) {
+        this.carrera = carrera;
     }
 
-    
-
-    public Integer getNumMaterias() {
-        return numMaterias;
-    }
-
-    public void setNumMaterias(Integer numMaterias) {
-        this.numMaterias = numMaterias;
-    }
-
-    public String getAsistencia() {
-        return asistencia;
-    }
-
-    public void setAsistencia(String asistencia) {
-        this.asistencia = asistencia;
-    }
-    
-    
 }
