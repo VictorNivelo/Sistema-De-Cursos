@@ -2,6 +2,11 @@
 package vista;
 
 import controlador.listas.ListaEnlazada;
+import controlador.listas.excepciones.ListaNullException;
+import controlador.listas.excepciones.PosicionNoEncontradaException;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import modelo.Administrador;
 
@@ -11,7 +16,8 @@ import modelo.Administrador;
  */
 public class DialogoAdmAdministrador extends javax.swing.JDialog {
     
-    ListaEnlazada<Administrador> listaAdministradores = new ListaEnlazada<>();
+    LinkedList<Administrador> listaAdministradores = new LinkedList<>();
+    DefaultTableModel modelo = new DefaultTableModel();
     
     /**
      * Creates new form DialogoAdministrador
@@ -19,6 +25,9 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
     public DialogoAdmAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
+        modelo.addColumn("id");
+        modelo.addColumn("cargo");
+        modelo.addColumn("persona");
     }
 
     /**
@@ -275,19 +284,19 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
     private void btnMostrarAdministradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAdministradoresActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("1");
-        modelo.addColumn("2");
-        modelo.addColumn("3");
+        
+        
         
         //solo es para probar porque faltan las validaciones
         Administrador administradorA = new Administrador(1, "asdas", null);
         Administrador administradorB = new Administrador(2, "pipiipi", null);
+        Administrador administradorc = new Administrador(3, "xd", null);
         
-        listaAdministradores.insertar(administradorA);
-        listaAdministradores.insertar(administradorB);
+        listaAdministradores.add(administradorA);
+        listaAdministradores.add(administradorB);
+        listaAdministradores.add(administradorc);
         
-        for (Administrador administrador : listaAdministradores.ComvertirEnArray()) {
+        for (Administrador administrador : listaAdministradores) {
             Object[] fila = { administrador.getIdAdministrador(),administrador.getCargo()};
             modelo.addRow(fila);
             tblListaAdministradores.setModel(modelo);
@@ -296,13 +305,22 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
     private void btnEditarAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAdministradorActionPerformed
         // TODO add your handling code here:
-        int indice = tblListaAdministradores.getSelectedRow()+1;
-        Administrador EditarAdministrador =  listaAdministradores.getSize(indice);
+        
+
+        for(int i =0; i < listaAdministradores.size(); i++){
+            System.out.println(""+listaAdministradores.get(i) );
+        }
+        
         
     }//GEN-LAST:event_btnEditarAdministradorActionPerformed
 
     private void btnEliminarAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarAdministradorActionPerformed
         // TODO add your handling code here:
+        int indice = tblListaAdministradores.getSelectedRow();
+        listaAdministradores.remove(indice);
+        tblListaAdministradores.getModel();
+        modelo.removeRow(indice);
+        tblListaAdministradores.setModel(modelo);
         
     }//GEN-LAST:event_btnEliminarAdministradorActionPerformed
 

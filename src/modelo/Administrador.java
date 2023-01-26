@@ -44,5 +44,12 @@ public class Administrador extends Persona{
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
+
+    @Override
+    public String toString() {
+        return "idAdministrador=" + idAdministrador + ", Cargo=" + Cargo + ", persona=" + persona;
+    }
+    
+    
     
 }
