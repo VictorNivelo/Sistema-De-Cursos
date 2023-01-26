@@ -280,9 +280,12 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
         modelo.addColumn("2");
         modelo.addColumn("3");
         
+        //solo es para probar porque faltan las validaciones
         Administrador administradorA = new Administrador(1, "asdas", null);
+        Administrador administradorB = new Administrador(2, "pipiipi", null);
         
         listaAdministradores.insertar(administradorA);
+        listaAdministradores.insertar(administradorB);
         
         for (Administrador administrador : listaAdministradores.ComvertirEnArray()) {
             Object[] fila = { administrador.getIdAdministrador(),administrador.getCargo()};
@@ -293,6 +296,8 @@ public class DialogoAdmAdministrador extends javax.swing.JDialog {
 
     private void btnEditarAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAdministradorActionPerformed
         // TODO add your handling code here:
+        int indice = tblListaAdministradores.getSelectedRow()+1;
+        Administrador EditarAdministrador =  listaAdministradores.getSize(indice);
         
     }//GEN-LAST:event_btnEditarAdministradorActionPerformed
 
